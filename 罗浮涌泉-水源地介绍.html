@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>罗浮涌泉 · 水源地介绍</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4 L28 26 H4 Z' fill='%232D5F5B'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+  :root{
+    --primary:#2D5F5B;
+    --primary-light:#5BA8A0;
+    --sky:#4A90A4;
+    --bg:#FFFFFF;
+    --bg-soft:#F4F7F5;
+    --text:#2C3E3A;
+    --text-mute:#6B7F7A;
+    --line:#E2E8E5;
+    --gold:#B8935A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+    background:#E8EDEB;
+    color:var(--text);
+    line-height:1.75;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .phone{
+    max-width:480px;margin:0 auto;background:var(--bg);
+    min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,0.08);
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;height:70vh;min-height:480px;
+    display:flex;align-items:flex-end;
+    padding:40px 28px;
+    color:#fff;overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q6pkbB3jIoVughxY2BjcIIeZnMb') center/cover no-repeat;
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(20,50,46,0.85) 0%,rgba(20,50,46,0.3) 50%,rgba(20,50,46,0.1) 100%);
+  }
+  .hero-content{position:relative;z-index:1}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;letter-spacing:3px;
+    padding:5px 12px;border:1px solid rgba(255,255,255,0.4);
+    border-radius:20px;margin-bottom:18px;backdrop-filter:blur(4px);
+  }
+  .hero-tag svg{width:12px;height:12px}
+  .hero h1{
+    font-family:"Noto Serif SC",serif;
+    font-size:42px;font-weight:900;
+    letter-spacing:6px;line-height:1.15;margin-bottom:10px;
+  }
+  .hero p{font-size:14px;color:rgba(255,255,255,0.85);letter-spacing:1px}
+
+  /* ===== 通用区块 ===== */
+  section{padding:48px 28px}
+  .section-num{
+    font-family:"Noto Serif SC",serif;
+    font-size:12px;color:var(--primary-light);
+    letter-spacing:3px;margin-bottom:8px;font-weight:500;
+  }
+  h2{
+    font-family:"Noto Serif SC",serif;
+    font-size:24px;font-weight:700;
+    color:var(--primary);line-height:1.4;
+    margin-bottom:16px;letter-spacing:1px;
+  }
+  .lead{font-size:14px;color:var(--text-mute);line-height:1.85;margin-bottom:24px}
+
+  /* ===== 长寿之乡 ===== */
+  .honor{background:var(--bg-soft)}
+  .cert-img{
+    width:100%;border-radius:6px;margin:20px 0;
+    box-shadow:0 4px 20px rgba(45,95,91,0.12);
+  }
+  .honor-year{
+    display:flex;align-items:baseline;gap:8px;margin:16px 0;
+  }
+  .honor-year .big{
+    font-family:"Noto Serif SC",serif;
+    font-size:36px;font-weight:900;color:var(--primary);
+  }
+  .honor-year .small{font-size:13px;color:var(--text-mute)}
+
+  /* ===== 生态优势 ===== */
+  .eco-card{
+    display:flex;align-items:flex-start;gap:16px;
+    padding:20px 0;border-bottom:1px solid var(--line);
+  }
+  .eco-card:last-child{border-bottom:none}
+  .eco-icon{
+    flex-shrink:0;width:48px;height:48px;
+    background:var(--bg-soft);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .eco-icon svg{width:26px;height:26px;stroke:var(--primary);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .eco-text h3{
+    font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px;
+  }
+  .eco-text p{font-size:13px;color:var(--text-mute);line-height:1.7}
+
+  /* ===== 地质水源 ===== */
+  .geo{background:var(--bg-soft)}
+  .geo-img{
+    width:100%;height:200px;object-fit:cover;border-radius:6px;margin:20px 0;
+  }
+  .process{
+    display:flex;align-items:center;justify-content:space-between;
+    margin:24px 0;padding:20px;background:#fff;border-radius:8px;
+    border:1px solid var(--line);
+  }
+  .process-step{text-align:center;flex:1}
+  .process-step .icon{
+    width:40px;height:40px;margin:0 auto 8px;
+    background:var(--bg-soft);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .process-step .icon svg{width:20px;height:20px;stroke:var(--primary-light);fill:none;stroke-width:1.5}
+  .process-step .label{font-size:11px;color:var(--text-mute)}
+  .process-arrow{color:var(--line);font-size:18px;flex:0 0 auto;margin:0 4px;margin-bottom:22px}
+
+  /* ===== 葛洪 ===== */
+  .gehong-img{
+    width:100%;height:240px;object-fit:cover;border-radius:6px;margin:20px 0;
+  }
+  .quote{
+    border-left:3px solid var(--gold);
+    padding:12px 0 12px 16px;
+    font-family:"Noto Serif SC",serif;
+    font-size:15px;color:var(--text);line-height:1.9;
+    margin:20px 0;
+  }
+
+  /* ===== 总结 ===== */
+  .summary{
+    background:var(--primary);color:#fff;text-align:center;
+    padding:56px 28px;
+  }
+  .summary .section-num{color:rgba(255,255,255,0.5)}
+  .summary h2{color:#fff;margin-bottom:20px}
+  .summary-points{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+    margin:28px 0;text-align:left;
+  }
+  .summary-point{
+    background:rgba(255,255,255,0.08);
+    border-radius:8px;padding:16px;
+  }
+  .summary-point .sp-icon{
+    width:32px;height:32px;margin-bottom:10px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.12);border-radius:6px;
+  }
+  .summary-point .sp-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.5}
+  .summary-point .sp-title{font-size:13px;font-weight:600;margin-bottom:4px}
+  .summary-point .sp-desc{font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5}
+  .summary-location{
+    margin-top:20px;font-size:12px;color:rgba(255,255,255,0.6);
+    letter-spacing:1px;
+  }
+
+  /* 滚动渐入 */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20 L9 8 L13 14 L17 6 L21 20 Z"/></svg>
+        水源地探秘
+      </div>
+      <h1>罗浮涌泉</h1>
+      <p>世界长寿之乡博罗的自然馈赠</p>
+    </div>
+  </div>
+
+  <!-- 01 长寿之乡 -->
+  <section class="honor">
+    <div class="section-num reveal">01 / 荣誉</div>
+    <h2 class="reveal">世界长寿之乡</h2>
+    <p class="lead reveal">
+      2016 年，国际养生总会正式授予广东省惠州市博罗县"世界长寿之乡"荣誉称号。这座坐落于东江之畔的岭南小城，凭借得天独厚的生态禀赋与优质水源，孕育出独具特色的长寿文化。
+    </p>
+    <img class="cert-img reveal" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TJ8kb1kMUo5luWx8sgdcq6kvnWf" alt="世界长寿之乡证书">
+    <div class="honor-year reveal">
+      <span class="big">2016</span>
+      <span class="small">年正式获评<br>国际养生总会颁发</span>
+    </div>
+  </section>
+
+  <!-- 02 罗浮山生态 -->
+  <section>
+    <div class="section-num reveal">02 / 生态</div>
+    <h2 class="reveal">岭南第一山的<br>自然屏障</h2>
+    <p class="lead reveal">
+      罗浮山屹立于博罗西北、东江之畔，层峦叠嶂、草木葱茏，是岭南难得的原生态秘境。
+    </p>
+
+    <div class="eco-card reveal">
+      <div class="eco-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22V8"/><path d="M12 8C12 5 10 3 7 3c0 3 2 5 5 5Z"/><path d="M12 12c0-3 2-5 5-5 0 3-2 5-5 5Z"/></svg>
+      </div>
+      <div class="eco-text">
+        <h3>森林覆盖率超 90%</h3>
+        <p>充沛植被形成天然生态屏障，远离工业喧嚣与城市污染。</p>
+      </div>
+    </div>
+
+    <div class="eco-card reveal">
+      <div class="eco-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <div class="eco-text">
+        <h3>中国天然氧吧</h3>
+        <p>高浓度负氧离子，四季清风拂面，绿意常青。</p>
+      </div>
+    </div>
+
+    <div class="eco-card reveal">
+      <div class="eco-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 20l6-10 4 6 3-4 5 8z"/><path d="M3 20h18"/></svg>
+      </div>
+      <div class="eco-text">
+        <h3>岭南第一山</h3>
+        <p>岭南大型花岗岩裂隙水源富集区，地质条件得天独厚。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 水源形成 -->
+  <section class="geo">
+    <div class="section-num reveal">03 / 水源</div>
+    <h2 class="reveal">花岗岩裂隙中的<br>深层地下水</h2>
+    <p class="lead reveal">
+      雨水与山泉渗入花岗岩层层裂隙，在地质运动与漫长岁月中缓慢渗透、滤除杂质，凝练精华，形成珍贵的深层地下水。
+    </p>
+    <img class="geo-img reveal" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BqD0bKIlfoFOk5x1zmNconmpnHw" alt="花岗岩裂隙深层涌泉">
+
+    <div class="process reveal">
+      <div class="process-step">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 1 1-12 0c0-4 3-7 6-11z"/></svg></div>
+        <div class="label">雨水山泉</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg></div>
+        <div class="label">岩层过滤</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M8 7c0 3 4 3 4 6M16 7c0 3-4 3-4 6"/></svg></div>
+        <div class="label">矿物溶出</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h12l2 6H4l2-6z"/><path d="M5 9v11h14V9M9 13h6"/></svg></div>
+        <div class="label">深层涌泉</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 葛洪人文 -->
+  <section>
+    <div class="section-num reveal">04 / 人文</div>
+    <h2 class="reveal">葛洪隐居<br>罗浮山三十余载</h2>
+    <img class="gehong-img reveal" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SFaEbKmAko7jC3xlM8scyzYbnuf" alt="葛洪雕像">
+    <p class="lead reveal">
+      东晋著名医药学家葛洪，隐居罗浮山三十余载，深耕本草、采药著书、悬壶济世。他沉淀下罗浮山水的人文底蕴，也印证了这片水土的天然珍贵。
+    </p>
+    <div class="quote reveal">
+      从仙山密林的生态涵养，到千年古泉的文脉沉淀，再到岩层深处的天然淬炼——这股源自世界长寿之乡的罗浮水源，藏着自然最纯粹的馈赠。
+    </div>
+  </section>
+
+  <!-- 总结 -->
+  <section class="summary">
+    <div class="section-num">水源总结</div>
+    <h2>我们的水源<br>取自罗浮山脉</h2>
+    <div class="summary-points">
+      <div class="summary-point">
+        <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
+        <div class="sp-title">深层地下涌泉</div>
+        <div class="sp-desc">花岗岩裂隙自涌，非地表水</div>
+      </div>
+      <div class="summary-point">
+        <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 1 1-12 0c0-4 3-7 6-11z"/></svg></div>
+        <div class="sp-title">天然弱碱性</div>
+        <div class="sp-desc">pH 7.2–8.0，含锌与偏硅酸</div>
+      </div>
+      <div class="summary-point">
+        <div class="sp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <div class="sp-title">零污染产区</div>
+        <div class="sp-desc">森林覆盖率 90%+，远离工业带</div>
+      </div>
+      <div class="summary-point">
+        <div class="sp-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="sp-title">长寿之乡</div>
+        <div class="sp-desc">世界长寿之乡博罗核心水源区</div>
+      </div>
+    </div>
+    <div class="summary-location">
+      ©BOLUO LONGYIN · 博罗龙饮
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
